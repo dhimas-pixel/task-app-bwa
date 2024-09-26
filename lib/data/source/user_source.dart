@@ -79,7 +79,8 @@ class UserSource {
       DMethod.logResponse(response.data);
 
       if (response.statusCode == 200) {
-        return response.data.map((e) => User.fromJson(e)).toList();
+        final List<dynamic> data = response.data;
+        return data.map((e) => User.fromJson(e)).toList();
       }
 
       return null;
